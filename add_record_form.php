@@ -14,6 +14,7 @@ $statement->closeCursor();
 <head>
     <title>SAMSUNG ELECTRONICS</title>
     <link rel="stylesheet" type="text/css" href="./scss/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <!-- the body section -->
 <body>
@@ -61,10 +62,11 @@ $statement->closeCursor();
             <input type="file" name="image" accept="image/*" />
             <br>
             <label>&nbsp;</label>
-            <input type="submit" value="Add Record">
+            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Record</button>
+            
             <br>
         </form>
-        <p><a href="index.php">Homepage</a></p>
+        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>

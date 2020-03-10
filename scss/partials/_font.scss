@@ -2,9 +2,10 @@ h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 150%;
+    font-size: 140% !important;
     margin: 0;
-    padding: .5em 0 .25em;
+    padding-top: 15px;
+    //padding: .5em 0 .25em;
 }
 h4 {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -17,4 +18,33 @@ h4 {
 
 h1, h4 {
     color: grey;
+}
+
+#button-actions
+{
+    a:hover
+    {
+        color: white;
+        text-decoration: none;
+    }
+    a
+    {
+        color: #333;
+    }
+}
+#category-list
+{
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    a:hover
+    {
+        color: rgb(107, 107, 107);
+        text-decoration: none;
+    }
+    a
+    {
+        color: #333;
+    }
 }

@@ -14,12 +14,14 @@
 <head>
     <title>SAMSUNG ELECTRONICS</title>
     <link rel="stylesheet" type="text/css" href="./scss/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <!-- the body section -->
 <body>
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
         <header><h1>CATEGORIES</h1></header>
+        <br>
     <table>
         <tr>
             <th>Name</th>
@@ -41,7 +43,8 @@
         <?php endforeach; ?>
     </table>
     <br>
-    <h2>Add Category</h2>
+    <header><h1>ADD A NEW CATEGORY</h1></header>
+    <br>
     <form action="add_category.php" method="post"
           id="add_category_form">
         <label>Name:</label>
@@ -49,7 +52,7 @@
         <input id="add_category_button" type="submit" value="Add">
     </form>
     <br>
-    <p><a href="index.php">Homepage</a></p>
+    <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>

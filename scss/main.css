@@ -2,7 +2,7 @@
 body {
   padding-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  width: 1500px !important;
+  width: 1800px !important;
   margin: 0 auto !important;
   background-color: white;
   border: 1px solid black;
@@ -36,9 +36,9 @@ h1 {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 150%;
+  font-size: 140% !important;
   margin: 0;
-  padding: .5em 0 .25em;
+  padding-top: 15px;
 }
 
 h4 {
@@ -54,15 +54,52 @@ h1, h4 {
   color: grey;
 }
 
+#button-actions a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#button-actions a {
+  color: #333;
+}
+
+#category-list {
+  font-size: 15px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 300 !important;
+  text-transform: uppercase;
+}
+
+#category-list a:hover {
+  color: #6b6b6b;
+  text-decoration: none;
+}
+
+#category-list a {
+  color: #333;
+}
+
 table {
+  padding: .2em 1.5em .2em .5em;
   border: 1px solid black;
   border-collapse: collapse;
+}
+
+table tr {
+  padding: .2em 1.5em .2em .5em;
 }
 
 table tr th {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
+  padding: .2em 1.5em .2em .5em;
+}
+
+#table-image {
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
 }
 
 #category-table #category-table-name {
@@ -70,7 +107,7 @@ table tr th {
 }
 
 #category-table #category-table-description {
-  padding-right: 20em;
+  padding-right: 40em;
 }
 
 #category-table td, #category-table th {

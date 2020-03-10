@@ -54,7 +54,7 @@ $statement3->closeCursor();
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+<li id="category-list"><a href=".?category_id=<?php echo $category['categoryID']; ?>">
 <?php echo $category['categoryName']; ?>
 </a>
 </li>
@@ -79,7 +79,7 @@ $statement3->closeCursor();
 </tr>
 <?php foreach ($records as $record) : ?>
 <tr>
-<td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
+<td id="table-image"><img src="image_uploads/<?php echo $record['image']; ?>" width="125px" height="auto" /></td>
 <td><?php echo $record['code']; ?></td>
 <td><?php echo $record['name']; ?></td>
 <td><?php echo $record['description']; ?></td>
@@ -105,8 +105,9 @@ value="<?php echo $record['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Edit Categories</a></p>
+<br><br>
+<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_record_form.php">Add Record</a></button>
+<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="category_list.php">Edit Categories</a></button>
 </section>
 </main>
 <footer>

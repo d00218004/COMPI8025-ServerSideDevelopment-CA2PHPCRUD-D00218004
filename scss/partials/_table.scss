@@ -1,16 +1,26 @@
 table
 {
+    padding: .2em 1.5em .2em .5em;
     border: 1px solid black;
     border-collapse: collapse;
     tr
     {
+        padding: .2em 1.5em .2em .5em;
         th
         {
             font-family: 'IBM Plex Sans', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
+            padding: .2em 1.5em .2em .5em;
         }
     }
+}
+
+#table-image
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: middle !important;
 }
 
 #category-table
@@ -21,7 +31,7 @@ table
     }
     #category-table-description
     {
-        padding-right: 20em;
+        padding-right: 40em;
     }
     td, th {
         border: 1px dashed black;
