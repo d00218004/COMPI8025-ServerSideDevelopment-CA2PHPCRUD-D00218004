@@ -21,7 +21,7 @@ $statement->closeCursor();
 <body>
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
-        <h1>Edit record</h1>
+       <header><h1>EDIT A PRODUCT</h1></header>
         <form action="edit_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
             <input type="hidden" name="original_image" value="<?php echo $record['image']; ?>" />

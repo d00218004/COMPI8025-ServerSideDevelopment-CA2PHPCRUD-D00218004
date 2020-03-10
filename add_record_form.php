@@ -20,7 +20,7 @@ $statement->closeCursor();
     <header><img src="./image-resized/black-samsung-logo.png" /></header>
 
     <main>
-        <h1>Add Record</h1>
+        <header><h1>ADD A PRODUCT</h1></header>
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
             <label>Category:</label>

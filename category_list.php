@@ -19,7 +19,7 @@
 <body>
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
-    <h1>Categories</h1>
+        <header><h1>CATEGORIES</h1></header>
     <table>
         <tr>
             <th>Name</th>

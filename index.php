@@ -46,10 +46,10 @@ $statement3->closeCursor();
 <body>
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
 <main>
-<h1 id="header">Stock Control System</h1>
+<header><h1>STOCK CONTROL SYSTEM</h1></header>
 <aside>
 <!-- display a list of categories in the sidebar-->
-<h2>Categories</h2>
+<h2>CATEGORIES</h2>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
@@ -63,7 +63,6 @@ $statement3->closeCursor();
 </aside>
 <section>
 <!-- display a table of records from the database -->
-<div class="table">
 <h2><?php echo $category_name; ?></h2>
 <table>
 <tr>
@@ -107,7 +106,6 @@ value="<?php echo $record['categoryID']; ?>">
 </table>
 <p><a href="add_record_form.php">Add Record</a></p>
 <p><a href="category_list.php">Edit Categories</a></p>
-</div>
 </section>
 </main>
 <footer>
