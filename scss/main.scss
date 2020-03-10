@@ -3,6 +3,7 @@
 @import 'partials/_body.scss';
 @import 'partials/_header.scss';
 @import 'partials/_font.scss';
+@import 'partials/_table.scss';
 /* the styles for the html elements */
 html {
     background-color: #ccc;
@@ -51,10 +52,6 @@ a {
 }
 a:hover {
     color: rgb(208, 133, 4);
-}
-table {
-    border: 1px solid black;
-    border-collapse: collapse;
 }
 td, th {
     border: 1px dashed black;

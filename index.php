@@ -64,12 +64,12 @@ $statement3->closeCursor();
 <section>
 <!-- display a table of records from the database -->
 <h2><?php echo $category_name; ?></h2>
-<table>
+<table id="category-table">
 <tr>
 <th>Image</th>
 <th>Code</th>
-<th>Name</th>
-<th>Description</th>
+<th id="category-table-name">Name</th>
+<th id="category-table-description">Description</th>
 <th>Colour</th>
 <th>Storage</th>
 <th>Price</th>
