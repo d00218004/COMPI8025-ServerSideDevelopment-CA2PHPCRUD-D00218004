@@ -12,12 +12,12 @@
 <html>
 <!-- the head section -->
 <head>
-    <title>PHP CRUD</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>SAMSUNG ELECTRONICS</title>
+    <link rel="stylesheet" type="text/css" href="./scss/main.css">
 </head>
 <!-- the body section -->
 <body>
-    <header><h1>PHP CRUD</h1></header>
+<header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
     <h1>Categories</h1>
     <table>
@@ -52,7 +52,7 @@
     <p><a href="index.php">Homepage</a></p>
     </main>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> PHP CRUD, Inc.</p>
+        <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>
     </footer>
 </body>
 </html>

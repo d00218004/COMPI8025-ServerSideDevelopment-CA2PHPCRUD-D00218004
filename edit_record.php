@@ -4,11 +4,12 @@ $record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $code = filter_input(INPUT_POST, 'code');
 $name = filter_input(INPUT_POST, 'name');
+$description = filter_input(INPUT_POST, 'description');
+$colour = filter_input(INPUT_POST, 'colour');
+$storage = filter_input(INPUT_POST, 'storage');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
-if ($record_id == NULL || $record_id == FALSE || $category_id == NULL ||
-$category_id == FALSE || empty($code) || empty($name) ||
-$price == NULL || $price == FALSE) {
+if ($record_id == NULL || $record_id == FALSE || $category_id == NULL || $category_id == FALSE || empty($code) || empty($name) || empty($description) || empty($colour) || empty($storage) ||$price == NULL || $price == FALSE) {
 $error = "Invalid data. Check all fields and try again.";
 include('error.php');
 } else {
@@ -46,6 +47,9 @@ $query = 'UPDATE records
 SET categoryID = :category_id,
 code = :code,
 name = :name,
+description = :description,
+colour = :colour,
+storage = :storage,
 price = :price,
 image = :image
 WHERE recordID = :record_id';
@@ -53,6 +57,9 @@ $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':code', $code);
 $statement->bindValue(':name', $name);
+$statement->bindValue(':description', $description);
+$statement->bindValue(':colour', $colour);
+$statement->bindValue(':storage', $storage);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':image', $image);
 $statement->bindValue(':record_id', $record_id);

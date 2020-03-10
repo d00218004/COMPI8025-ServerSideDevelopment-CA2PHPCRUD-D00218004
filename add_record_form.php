@@ -12,12 +12,12 @@ $statement->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-    <title>PHP CRUD</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>SAMSUNG ELECTRONICS</title>
+    <link rel="stylesheet" type="text/css" href="./scss/main.css">
 </head>
 <!-- the body section -->
 <body>
-    <header><h1>PHP CRUD</h1></header>
+    <header><img src="./image-resized/black-samsung-logo.png" /></header>
 
     <main>
         <h1>Add Record</h1>
@@ -41,6 +41,18 @@ $statement->closeCursor();
             <input type="input" name="name">
             <br>
 
+            <label>Description:</label>
+            <input type="input" name="description">
+            <br>
+
+            <label>Colour:</label>
+            <input type="input" name="colour">
+            <br>
+
+            <label>Storage:</label>
+            <input type="input" name="storage">
+            <br>
+
             <label>Price:</label>
             <input type="input" name="price">
             <br>
@@ -55,7 +67,7 @@ $statement->closeCursor();
         <p><a href="index.php">Homepage</a></p>
     </main>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> PHP CRUD, Inc.</p>
+        <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>
     </footer>
 </body>
 </html>

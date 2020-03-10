@@ -39,14 +39,14 @@ $statement3->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-<title>PHP CRUD</title>
-<link rel="stylesheet" type="text/css" href="main.css">
+<title>SAMSUNG ELECTRONICS</title>
+<link rel="stylesheet" type="text/css" href="./scss/main.css">
 </head>
 <!-- the body section -->
 <body>
-<header><h1>PHP CRUD</h1></header>
+<header><img src="./image-resized/black-samsung-logo.png" /></header>
 <main>
-<h1>Record List</h1>
+<h1 id="header">Stock Control System</h1>
 <aside>
 <!-- display a list of categories in the sidebar-->
 <h2>Categories</h2>
@@ -63,12 +63,16 @@ $statement3->closeCursor();
 </aside>
 <section>
 <!-- display a table of records from the database -->
+<div class="table">
 <h2><?php echo $category_name; ?></h2>
 <table>
 <tr>
 <th>Image</th>
-<th>Name</th>
 <th>Code</th>
+<th>Name</th>
+<th>Description</th>
+<th>Colour</th>
+<th>Storage</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -76,8 +80,11 @@ $statement3->closeCursor();
 <?php foreach ($records as $record) : ?>
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-<td><?php echo $record['name']; ?></td>
 <td><?php echo $record['code']; ?></td>
+<td><?php echo $record['name']; ?></td>
+<td><?php echo $record['description']; ?></td>
+<td><?php echo $record['colour']; ?></td>
+<td><?php echo $record['storage']; ?></td>
 <td><?php echo $record['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
@@ -100,10 +107,11 @@ value="<?php echo $record['categoryID']; ?>">
 </table>
 <p><a href="add_record_form.php">Add Record</a></p>
 <p><a href="category_list.php">Edit Categories</a></p>
+</div>
 </section>
 </main>
 <footer>
-<p>&copy; <?php echo date("Y"); ?> PHP CRUD, Inc.</p>
+<p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>
 </footer>
 </body>
 </html>
