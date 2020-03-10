@@ -6,14 +6,15 @@ h1 {
     margin: 0;
     padding: .5em 0 .25em;
 }
-h2 {
+h4 {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700;
+    font-weight: 700 !important;
     text-transform: uppercase;
-    font-size: 120%;
+    font-size: 100% !important;
     margin: 0;
     padding: .25em 0 .5em;
 }
-h1, h2 {
+
+h1, h4 {
     color: grey;
 }

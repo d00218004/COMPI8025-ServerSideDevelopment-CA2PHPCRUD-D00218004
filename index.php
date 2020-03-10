@@ -41,6 +41,7 @@ $statement3->closeCursor();
 <head>
 <title>SAMSUNG ELECTRONICS</title>
 <link rel="stylesheet" type="text/css" href="./scss/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <!-- the body section -->
 <body>
@@ -49,7 +50,7 @@ $statement3->closeCursor();
 <header><h1>STOCK CONTROL SYSTEM</h1></header>
 <aside>
 <!-- display a list of categories in the sidebar-->
-<h2>CATEGORIES</h2>
+<h4>CATEGORIES</h4>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
@@ -63,7 +64,7 @@ $statement3->closeCursor();
 </aside>
 <section>
 <!-- display a table of records from the database -->
-<h2><?php echo $category_name; ?></h2>
+<h4><?php echo $category_name; ?></h4>
 <table id="category-table">
 <tr>
 <th>Image</th>
