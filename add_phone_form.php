@@ -1,11 +1,11 @@
 <?php
 require('database.php');
 $query = 'SELECT *
-          FROM categories
-          ORDER BY categoryID';
+          FROM phonecategories
+          ORDER BY phonecategoryID';
 $statement = $db->prepare($query);
 $statement->execute();
-$categories = $statement->fetchAll();
+$phonecategories = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -21,14 +21,14 @@ $statement->closeCursor();
     <header><img src="./image-resized/black-samsung-logo.png" /></header>
 
     <main>
-        <header><h1>ADD A PRODUCT</h1></header>
-        <form action="add_product.php" method="post" enctype="multipart/form-data"
-              id="add_product_form">
-            <label>Category:</label>
-            <select name="category_id">
-            <?php foreach ($categories as $category) : ?>
-                <option value="<?php echo $category['categoryID']; ?>">
-                    <?php echo $category['categoryName']; ?>
+        <header><h1>ADD A PHONE</h1></header>
+        <form action="add_phone.php" method="post" enctype="multipart/form-data"
+              id="add_phone_form">
+            <label>Phone Category:</label>
+            <select name="phonecategory_id">
+            <?php foreach ($phonecategories as $phonecategory) : ?>
+                <option value="<?php echo $phonecategory['phonecategoryID']; ?>">
+                    <?php echo $phonecategory['phonecategoryName']; ?>
                 </option>
             <?php endforeach; ?>
             </select>
@@ -65,7 +65,7 @@ $statement->closeCursor();
             <input type="file" name="image" accept="image/*" />
             <br>
             <label>&nbsp;</label>
-            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Product</button>
+            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Phone</button>
             <br>
         </form>
         <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>

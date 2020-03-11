@@ -1,11 +1,11 @@
 <?php
     require_once('database.php');
     // Get all categories
-    $query = 'SELECT * FROM categories
-              ORDER BY categoryID';
+    $query = 'SELECT * FROM phonecategories
+              ORDER BY phonecategoryID';
     $statement = $db->prepare($query);
     $statement->execute();
-    $categories = $statement->fetchAll();
+    $phonecategories = $statement->fetchAll();
     $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
 <body>
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
-        <header><h1>CATEGORIES</h1></header>
+        <header><h1>PHONE CATEGORIES</h1></header>
         <br>
     <table>
         <tr>
@@ -28,14 +28,14 @@
             <th>&nbsp;</th>
         </tr>
         <!-- Retrieve data as an associative array and output as a foreach loop  -->
-        <?php foreach ($categories as $category) : ?>
+        <?php foreach ($phonecategories as $phonecategory) : ?>
         <tr>
-            <td><?php echo $category['categoryName']; ?></td>
+            <td><?php echo $phonecategory['phonecategoryName']; ?></td>
             <td>
-                <form action="delete_category.php" method="post"
-                      id="delete_product_form">
-                    <input type="hidden" name="category_id"
-                           value="<?php echo $category['categoryID']; ?>">
+                <form action="delete_phone_category.php" method="post"
+                      id="delete_phone_form">
+                    <input type="hidden" name="phonecategory_id"
+                           value="<?php echo $phonecategory['phonecategoryID']; ?>">
                     <input type="submit" value="Delete">
                 </form>
             </td>
@@ -43,13 +43,13 @@
         <?php endforeach; ?>
     </table>
     <br>
-    <header><h1>ADD A NEW CATEGORY</h1></header>
+    <header><h1>ADD A NEW PHONE CATEGORY</h1></header>
     <br>
-    <form action="add_category.php" method="post"
-          id="add_category_form">
+    <form action="add_phone_category.php" method="post"
+          id="add_phone_category_form">
         <label>Name:</label>
         <input type="input" name="name">
-        <input id="add_category_button" type="submit" value="Add">
+        <input id="add_phone_category_button" type="submit" value="Add">
     </form>
     <br>
     <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>

@@ -7,14 +7,14 @@ if ($name == null) {
     include('error.php');
 } else {
     require_once('database.php');
-    // Add the product to the database
-    $query = "INSERT INTO categories (categoryName)
+    // Add the phone to the database
+    $query = "INSERT INTO phonecategories (phonecategoryName)
               VALUES (:name)";
     $statement = $db->prepare($query);
     $statement->bindValue(':name', $name);
     $statement->execute();
     $statement->closeCursor();
-    // Display the Category List page
-    include('category_list.php');
+    // Display the Phone Category List page
+    include('phone_category_list.php');
 }
 ?>

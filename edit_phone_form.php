@@ -1,13 +1,13 @@
 <?php
 require('database.php');
-$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
+$phone_id = filter_input(INPUT_POST, 'phone_id', FILTER_VALIDATE_INT);
 $query = 'SELECT *
-          FROM products
-          WHERE productID = :product_id';
+          FROM phones
+          WHERE phoneID = :phone_id';
 $statement = $db->prepare($query);
-$statement->bindValue(':product_id', $product_id);
+$statement->bindValue(':phone_id', $phone_id);
 $statement->execute();
-$product = $statement->fetch(PDO::FETCH_ASSOC);
+$phone = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -22,49 +22,49 @@ $statement->closeCursor();
 <body>
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
-       <header><h1>EDIT A PRODUCT</h1></header>
-        <form action="edit_product.php" method="post" enctype="multipart/form-data"
-              id="add_product_form">
-            <input type="hidden" name="original_image" value="<?php echo $product['image']; ?>" />
-            <input type="hidden" name="product_id"
-                   value="<?php echo $product['productID']; ?>">
-            <label>Category ID:</label>
-            <input type="category_id" name="category_id"
-                   value="<?php echo $product['categoryID']; ?>">
+       <header><h1>EDIT A PHONE</h1></header>
+        <form action="edit_phone.php" method="post" enctype="multipart/form-data"
+              id="add_phone_form">
+            <input type="hidden" name="original_image" value="<?php echo $phone['image']; ?>" />
+            <input type="hidden" name="phone_id"
+                   value="<?php echo $phone['phoneID']; ?>">
+            <label>Phone Category ID:</label>
+            <input type="phonecategory_id" name="phonecategory_id"
+                   value="<?php echo $phone['phonecategoryID']; ?>">
             <br>
             <label>Code:</label>
             <input type="input" name="code"
-                   value="<?php echo $product['code']; ?>">
+                   value="<?php echo $phone['code']; ?>">
             <br>
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $product['name']; ?>">
+                   value="<?php echo $phone['name']; ?>">
             <br>
             <label>Description:</label>
             <input type="input" name="description"
-                   value="<?php echo $product['description']; ?>">
+                   value="<?php echo $phone['description']; ?>">
             <br>
             <label>Colour:</label>
             <input type="input" name="colour"
-                   value="<?php echo $product['colour']; ?>">
+                   value="<?php echo $phone['colour']; ?>">
             <br>
             <label>Storage:</label>
             <input type="input" name="storage"
-                   value="<?php echo $product['storage']; ?>">
+                   value="<?php echo $phone['storage']; ?>">
               <br>
             <label>Stock Quantity:</label>
             <input type="input" name="stockQty"
-                   value="<?php echo $product['stockQty']; ?>">
+                   value="<?php echo $phone['stockQty']; ?>">
             <br>
             <label>Price:</label>
             <input type="input" name="price"
-                   value="<?php echo $product['price']; ?>">
+                   value="<?php echo $phone['price']; ?>">
             <br>
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>
-            <?php if ($product['image'] != "") { ?>
-            <p><img src="image_uploads/<?php echo $product['image']; ?>" height="150" /></p>
+            <?php if ($phone['image'] != "") { ?>
+            <p><img src="image_uploads/<?php echo $phone['image']; ?>" height="150" /></p>
             <?php } ?>
             <label>&nbsp;</label>
             <input type="submit" value="Save Changes">

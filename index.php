@@ -2,37 +2,37 @@
 // Connect to the database
 require_once('database.php');
 // Set the default category to the ID of 1
-if (!isset($category_id)) {
-$category_id = filter_input(INPUT_GET, 'category_id', 
+if (!isset($phonecategory_id)) {
+$phonecategory_id = filter_input(INPUT_GET, 'phonecategory_id', 
 FILTER_VALIDATE_INT);
-if ($category_id == NULL || $category_id == FALSE) {
-$category_id = 1;
+if ($phonecategory_id == NULL || $phonecategory_id == FALSE) {
+$phonecategory_id = 1;
 }
 }
 // Get name for current category
-$queryCategory = "SELECT * FROM categories
-WHERE categoryID = :category_id";
-$statement1 = $db->prepare($queryCategory);
-$statement1->bindValue(':category_id', $category_id);
+$queryPhoneCategory = "SELECT * FROM phonecategories
+WHERE phonecategoryID = :phonecategory_id";
+$statement1 = $db->prepare($queryPhoneCategory);
+$statement1->bindValue(':phonecategory_id', $phonecategory_id);
 $statement1->execute();
-$category = $statement1->fetch();
+$phonecategory = $statement1->fetch();
 $statement1->closeCursor();
-$category_name = $category['categoryName'];
-// Get all categories
-$queryAllCategories = 'SELECT * FROM categories
-ORDER BY categoryID';
-$statement2 = $db->prepare($queryAllCategories);
+$phonecategory_name = $phonecategory['phonecategoryName'];
+// Get all phone categories
+$queryAllPhoneCategories = 'SELECT * FROM phonecategories
+ORDER BY phonecategoryID';
+$statement2 = $db->prepare($queryAllPhoneCategories);
 $statement2->execute();
-$categories = $statement2->fetchAll();
+$phonecategories = $statement2->fetchAll();
 $statement2->closeCursor();
-// Get products for selected category
-$queryProducts = "SELECT * FROM products
-WHERE categoryID = :category_id
-ORDER BY productID";
-$statement3 = $db->prepare($queryProducts);
-$statement3->bindValue(':category_id', $category_id);
+// Get phones for selected phone category
+$queryPhones = "SELECT * FROM phones
+WHERE phonecategoryID = :phonecategory_id
+ORDER BY phoneID";
+$statement3 = $db->prepare($queryPhones);
+$statement3->bindValue(':phonecategory_id', $phonecategory_id);
 $statement3->execute();
-$products = $statement3->fetchAll();
+$phones = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ $statement3->closeCursor();
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?category_id=1">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?phonecategory_id=1">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Features</a>
@@ -78,13 +78,13 @@ $statement3->closeCursor();
 <main>
 <header><h1>STOCK CONTROL SYSTEM</h1></header>
 <aside>
-<!-- display a list of categories in the sidebar-->
-<h4>CATEGORIES</h4>
+<!-- display a list of phone categories in the sidebar-->
+<h4>PHONE CATEGORIES</h4>
 <nav>
 <ul>
-<?php foreach ($categories as $category) : ?>
-<li id="category-list"><a href=".?category_id=<?php echo $category['categoryID']; ?>">
-<?php echo $category['categoryName']; ?>
+<?php foreach ($phonecategories as $phonecategory) : ?>
+<li id="category-list"><a href=".?phonecategory_id=<?php echo $phonecategory['phonecategoryID']; ?>">
+<?php echo $phonecategory['phonecategoryName']; ?>
 </a>
 </li>
 <?php endforeach; ?>
@@ -92,8 +92,8 @@ $statement3->closeCursor();
 </nav>
 </aside>
 <section>
-<!-- display a table of products from the database -->
-<h4><?php echo $category_name; ?></h4>
+<!-- display a table of phones from the database -->
+<h4><?php echo $phonecategory_name; ?></h4>
 <table id="category-table">
 <tr>
 <th>Image</th>
@@ -107,38 +107,38 @@ $statement3->closeCursor();
 <th>Delete</th>
 <th>Edit</th>
 </tr>
-<?php foreach ($products as $product) : ?>
+<?php foreach ($phones as $phone) : ?>
 <tr>
-<td id="table-image"><img src="image_uploads/<?php echo $product['image']; ?>" width="125px" height="auto" /></td>
-<td><?php echo $product['code']; ?></td>
-<td><?php echo $product['name']; ?></td>
-<td><?php echo $product['description']; ?></td>
-<td><?php echo $product['colour']; ?></td>
-<td><?php echo $product['storage']; ?></td>
-<td><?php echo $product['stockQty']; ?></td>
-<td><?php echo $product['price']; ?></td>
-<td><form action="delete_product.php" method="post"
-id="delete_product_form">
-<input type="hidden" name="product_id"
-value="<?php echo $product['productID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $product['categoryID']; ?>">
+<td id="table-image"><img src="image_uploads/<?php echo $phone['image']; ?>" width="125px" height="auto" /></td>
+<td><?php echo $phone['code']; ?></td>
+<td><?php echo $phone['name']; ?></td>
+<td><?php echo $phone['description']; ?></td>
+<td><?php echo $phone['colour']; ?></td>
+<td><?php echo $phone['storage']; ?></td>
+<td><?php echo $phone['stockQty']; ?></td>
+<td><?php echo $phone['price']; ?></td>
+<td><form action="delete_phone.php" method="post"
+id="delete_phone_form">
+<input type="hidden" name="phone_id"
+value="<?php echo $phone['phoneID']; ?>">
+<input type="hidden" name="phonecategory_id"
+value="<?php echo $phone['phonecategoryID']; ?>">
 <input type="submit" value="Delete">
 </form></td>
-<td><form action="edit_product_form.php" method="post"
-id="delete_product_form">
-<input type="hidden" name="product_id"
-value="<?php echo $product['productID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $product['categoryID']; ?>">
+<td><form action="edit_phone_form.php" method="post"
+id="delete_phone_form">
+<input type="hidden" name="phone_id"
+value="<?php echo $phone['phoneID']; ?>">
+<input type="hidden" name="phonecategory_id"
+value="<?php echo $phone['phonecategoryID']; ?>">
 <input type="submit" value="Edit">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
 <br><br>
-<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_product_form.php">Add Product</a></button>
-<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="category_list.php">Edit Categories</a></button>
+<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_phone_form.php">Add Phone</a></button>
+<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="phone_category_list.php">Edit Phone Categories</a></button>
 </section>
 </main>
 <footer>

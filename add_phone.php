@@ -1,6 +1,6 @@
 <?php
 // Get the data
-$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
+$phonecategory_id = filter_input(INPUT_POST, 'phonecategory_id', FILTER_VALIDATE_INT);
 $code = filter_input(INPUT_POST, 'code');
 $name = filter_input(INPUT_POST, 'name');
 $description = filter_input(INPUT_POST, 'description');
@@ -8,7 +8,7 @@ $colour = filter_input(INPUT_POST, 'colour');
 $storage = filter_input(INPUT_POST, 'storage');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
-if ($category_id == null || $category_id == false || $code == null || $name == null || $description == null || $colour == null || $storage == null || $price == null || $price == false) {
+if ($phonecategory_id == null || $phonecategory_id == false || $code == null || $name == null || $description == null || $colour == null || $storage == null || $price == null || $price == false) {
     $error = "Invalid data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -54,13 +54,13 @@ if ($category_id == null || $category_id == false || $code == null || $name == n
 // End Image upload
     
     require_once('database.php');
-    // Add the products to the database 
-    $query = "INSERT INTO products
-                 (categoryID, code, name, description, colour, storage, price, image)
+    // Add the phones to the database 
+    $query = "INSERT INTO phones
+                 (phonecategoryID, code, name, description, colour, storage, price, image)
               VALUES
-                 (:category_id, :code, :name, :description, :colour, :storage, :price, :image)";
+                 (:phonecategory_id, :code, :name, :description, :colour, :storage, :price, :image)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':phonecategory_id', $phonecategory_id);
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':description', $description);
@@ -70,6 +70,6 @@ if ($category_id == null || $category_id == false || $code == null || $name == n
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();
-// Display the products List page
+// Display the phones List page
     include('index.php');
 }

@@ -6,7 +6,7 @@ if (!isset($category_id)) {
 $category_id = filter_input(INPUT_GET, 'category_id', 
 FILTER_VALIDATE_INT);
 if ($category_id == NULL || $category_id == FALSE) {
-$category_id = 1;
+$category_id = 6;
 }
 }
 // Get name for current category
@@ -25,14 +25,14 @@ $statement2 = $db->prepare($queryAllCategories);
 $statement2->execute();
 $categories = $statement2->fetchAll();
 $statement2->closeCursor();
-// Get audios for selected category
-$queryAudios = "SELECT * FROM audios
+// Get wearables for selected category
+$queryWearables = "SELECT * FROM wearables
 WHERE categoryID = :category_id
-ORDER BY audioID";
-$statement3 = $db->prepare($queryAudios);
+ORDER BY wearableID";
+$statement3 = $db->prepare($queryWearables);
 $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
-$audios = $statement3->fetchAll();
+$wearables = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ $statement3->closeCursor();
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?category_id=1">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Features</a>
@@ -92,7 +92,7 @@ $statement3->closeCursor();
 </nav>
 </aside>
 <section>
-<!-- display a table of audios from the database -->
+<!-- display a table of wearables from the database -->
 <h4><?php echo $category_name; ?></h4>
 <table id="category-table">
 <tr>
@@ -107,37 +107,37 @@ $statement3->closeCursor();
 <th>Delete</th>
 <th>Edit</th>
 </tr>
-<?php foreach ($audios as $audio) : ?>
+<?php foreach ($wearables as $wearable) : ?>
 <tr>
-<td id="table-image"><img src="image_uploads/<?php echo $audio['image']; ?>" width="125px" height="auto" /></td>
-<td><?php echo $audio['code']; ?></td>
-<td><?php echo $audio['name']; ?></td>
-<td><?php echo $audio['description']; ?></td>
-<td><?php echo $audio['colour']; ?></td>
-<td><?php echo $audio['wattage']; ?></td>
-<td><?php echo $audio['stockQty']; ?></td>
-<td><?php echo $audio['price']; ?></td>
-<td><form action="delete_audio.php" method="post"
-id="delete_audio_form">
-<input type="hidden" name="audio_id"
-value="<?php echo $audio['audioID']; ?>">
+<td id="table-image"><img src="image_uploads/<?php echo $wearable['image']; ?>" width="125px" height="auto" /></td>
+<td><?php echo $wearable['code']; ?></td>
+<td><?php echo $wearable['name']; ?></td>
+<td><?php echo $wearable['description']; ?></td>
+<td><?php echo $wearable['colour']; ?></td>
+<td><?php echo $wearable['wattage']; ?></td>
+<td><?php echo $wearable['stockQty']; ?></td>
+<td><?php echo $wearable['price']; ?></td>
+<td><form action="delete_wearable.php" method="post"
+id="delete_wearable_form">
+<input type="hidden" name="wearable_id"
+value="<?php echo $wearable['wearableID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $audio['categoryID']; ?>">
+value="<?php echo $wearable['categoryID']; ?>">
 <input type="submit" value="Delete">
 </form></td>
-<td><form action="edit_audio_form.php" method="post"
-id="delete_audio_form">
-<input type="hidden" name="audio_id"
-value="<?php echo $audio['audioID']; ?>">
+<td><form action="edit_wearable_form.php" method="post"
+id="delete_wearable_form">
+<input type="hidden" name="wearable_id"
+value="<?php echo $wearble['wearableID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $audio['categoryID']; ?>">
+value="<?php echo $wearable['categoryID']; ?>">
 <input type="submit" value="Edit">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
 <br><br>
-<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_audio_form.php">Add Audio</a></button>
+<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_wearable_form.php">Add Wearable</a></button>
 <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="category_list.php">Edit Categories</a></button>
 </section>
 </main>
