@@ -1,0 +1,19 @@
+section {
+    float: left;
+    width: 800PX;
+    padding-bottom: 1.5em;
+}
+ul {
+    margin: 0 0 1em 0;
+    padding: 0 0 0 2.5em;
+}
+li {
+    margin: 0;
+    padding: 0;
+}
+td, th {
+    border: 1px dashed black;
+    padding: .2em .5em .2em .5em;
+    vertical-align: top;
+    text-align: left;
+}

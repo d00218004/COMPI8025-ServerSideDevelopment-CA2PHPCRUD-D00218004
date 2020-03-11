@@ -73,6 +73,7 @@ $statement3->closeCursor();
 <th id="category-table-description">Description</th>
 <th>Colour</th>
 <th>Storage</th>
+<th>Quantity in Stock</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
@@ -85,6 +86,7 @@ $statement3->closeCursor();
 <td><?php echo $record['description']; ?></td>
 <td><?php echo $record['colour']; ?></td>
 <td><?php echo $record['storage']; ?></td>
+<td><?php echo $record['stockQty']; ?></td>
 <td><?php echo $record['price']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">

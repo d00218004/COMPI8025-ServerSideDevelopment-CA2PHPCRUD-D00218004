@@ -7,9 +7,10 @@ $name = filter_input(INPUT_POST, 'name');
 $description = filter_input(INPUT_POST, 'description');
 $colour = filter_input(INPUT_POST, 'colour');
 $storage = filter_input(INPUT_POST, 'storage');
+$stockQty = filter_input(INPUT_POST, 'stockQty');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
-if ($record_id == NULL || $record_id == FALSE || $category_id == NULL || $category_id == FALSE || empty($code) || empty($name) || empty($description) || empty($colour) || empty($storage) ||$price == NULL || $price == FALSE) {
+if ($record_id == NULL || $record_id == FALSE || $category_id == NULL || $category_id == FALSE || empty($code) || empty($name) || empty($description) || empty($colour) || empty($storage) || $price == NULL || $price == FALSE) {
 $error = "Invalid data. Check all fields and try again.";
 include('error.php');
 } else {
@@ -50,6 +51,7 @@ name = :name,
 description = :description,
 colour = :colour,
 storage = :storage,
+stockQty = :stockQty,
 price = :price,
 image = :image
 WHERE recordID = :record_id';
@@ -60,6 +62,7 @@ $statement->bindValue(':name', $name);
 $statement->bindValue(':description', $description);
 $statement->bindValue(':colour', $colour);
 $statement->bindValue(':storage', $storage);
+$statement->bindValue(':stockQty', $stockQty);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':image', $image);
 $statement->bindValue(':record_id', $record_id);

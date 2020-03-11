@@ -4,6 +4,10 @@
 @import 'partials/_header.scss';
 @import 'partials/_font.scss';
 @import 'partials/_table.scss';
+@import 'partials/_footer.scss';
+@import 'partials/_navbar.scss';
+@import 'partials/_product-table.scss';
+
 /* the styles for the html elements */
 html {
     background-color: #ccc;
@@ -15,49 +19,12 @@ aside {
     float: left;
     width: 150px;
 }
-nav ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-nav ul li {
-    padding-bottom: 0.5em;
-}
-section {
-    float: left;
-    width: 800PX;
-    padding-bottom: 1.5em;
-}
-footer {
-    clear: both;
-    margin-top: 1em;
-    border-top: 2px solid black;
-}
-footer p {
-    text-align: right;
-    font-size: 80%;
-    margin: 1em 0;
-}
-ul {
-    margin: 0 0 1em 0;
-    padding: 0 0 0 2.5em;
-}
-li {
-    margin: 0;
-    padding: 0;
-}
 a {
     color: rgb(41, 64, 124);
     font-weight: bold;
 }
 a:hover {
     color: rgb(208, 133, 4);
-}
-td, th {
-    border: 1px dashed black;
-    padding: .2em .5em .2em .5em;
-    vertical-align: top;
-    text-align: left;
 }
 form {
     margin: 0;

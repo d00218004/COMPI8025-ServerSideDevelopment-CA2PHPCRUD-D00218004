@@ -54,6 +54,10 @@ $statement->closeCursor();
             <input type="input" name="storage">
             <br>
 
+            <label>Stock Quantity:</label>
+            <input type="input" name="stockQty">
+            <br>
+
             <label>Price:</label>
             <input type="input" name="price">
             <br>

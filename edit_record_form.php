@@ -51,6 +51,10 @@ $statement->closeCursor();
             <label>Storage:</label>
             <input type="input" name="storage"
                    value="<?php echo $record['storage']; ?>">
+              <br>
+            <label>Stock Quantity:</label>
+            <input type="input" name="stockQty"
+                   value="<?php echo $record['stockQty']; ?>">
             <br>
             <label>Price:</label>
             <input type="input" name="price"
