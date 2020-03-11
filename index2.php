@@ -25,14 +25,14 @@ $statement2 = $db->prepare($queryAllCategories);
 $statement2->execute();
 $categories = $statement2->fetchAll();
 $statement2->closeCursor();
-// Get products for selected category
-$queryProducts = "SELECT * FROM products
+// Get audios for selected category
+$queryAudios = "SELECT * FROM audios
 WHERE categoryID = :category_id
-ORDER BY productID";
-$statement3 = $db->prepare($queryProducts);
+ORDER BY audioID";
+$statement3 = $db->prepare($queryAudios);
 $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
-$products = $statement3->fetchAll();
+$audios = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -92,7 +92,7 @@ $statement3->closeCursor();
 </nav>
 </aside>
 <section>
-<!-- display a table of products from the database -->
+<!-- display a table of audios from the database -->
 <h4><?php echo $category_name; ?></h4>
 <table id="category-table">
 <tr>
@@ -101,43 +101,43 @@ $statement3->closeCursor();
 <th id="category-table-name">Name</th>
 <th id="category-table-description">Description</th>
 <th>Colour</th>
-<th>Storage</th>
+<th>Wattage</th>
 <th>Quantity in Stock</th>
 <th>Price</th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
-<?php foreach ($products as $product) : ?>
+<?php foreach ($audios as $audio) : ?>
 <tr>
-<td id="table-image"><img src="image_uploads/<?php echo $product['image']; ?>" width="125px" height="auto" /></td>
-<td><?php echo $product['code']; ?></td>
-<td><?php echo $product['name']; ?></td>
-<td><?php echo $product['description']; ?></td>
-<td><?php echo $product['colour']; ?></td>
-<td><?php echo $product['storage']; ?></td>
-<td><?php echo $product['stockQty']; ?></td>
-<td><?php echo $product['price']; ?></td>
-<td><form action="delete_product.php" method="post"
-id="delete_product_form">
-<input type="hidden" name="product_id"
-value="<?php echo $product['productID']; ?>">
+<td id="table-image"><img src="image_uploads/<?php echo $audio['image']; ?>" width="125px" height="auto" /></td>
+<td><?php echo $audio['code']; ?></td>
+<td><?php echo $audio['name']; ?></td>
+<td><?php echo $audio['description']; ?></td>
+<td><?php echo $audio['colour']; ?></td>
+<td><?php echo $audio['wattage']; ?></td>
+<td><?php echo $audio['stockQty']; ?></td>
+<td><?php echo $audio['price']; ?></td>
+<td><form action="delete_audio.php" method="post"
+id="delete_audio_form">
+<input type="hidden" name="audio_id"
+value="<?php echo $audio['audioID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $product['categoryID']; ?>">
+value="<?php echo $audio['categoryID']; ?>">
 <input type="submit" value="Delete">
 </form></td>
-<td><form action="edit_product_form.php" method="post"
-id="delete_product_form">
-<input type="hidden" name="product_id"
-value="<?php echo $product['productID']; ?>">
+<td><form action="edit_audio_form.php" method="post"
+id="delete_audio_form">
+<input type="hidden" name="audio_id"
+value="<?php echo $audio['audioID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $product['categoryID']; ?>">
+value="<?php echo $audio['categoryID']; ?>">
 <input type="submit" value="Edit">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
 <br><br>
-<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_product_form.php">Add Product</a></button>
+<button id="button-actions" type="button" class="btn btn-outline-dark"><a href="add_audio_form.php">Add Audio</a></button>
 <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="category_list.php">Edit Categories</a></button>
 </section>
 </main>

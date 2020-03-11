@@ -54,8 +54,8 @@ if ($category_id == null || $category_id == false || $code == null || $name == n
 // End Image upload
     
     require_once('database.php');
-    // Add the records to the database 
-    $query = "INSERT INTO records
+    // Add the products to the database 
+    $query = "INSERT INTO products
                  (categoryID, code, name, description, colour, storage, price, image)
               VALUES
                  (:category_id, :code, :name, :description, :colour, :storage, :price, :image)";
@@ -70,6 +70,6 @@ if ($category_id == null || $category_id == false || $code == null || $name == n
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();
-// Display the records List page
+// Display the products List page
     include('index.php');
 }

@@ -50,6 +50,11 @@ h4 {
   padding: .25em 0 .5em;
 }
 
+h2, h3, h5, h6, p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500 !important;
+}
+
 h1, h4 {
   color: grey;
 }
@@ -139,6 +144,15 @@ nav ul li {
   padding-bottom: 0.5em;
 }
 
+.navbar-light .navbar-nav {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.9);
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
 section {
   float: left;
   width: 800PX;
@@ -207,24 +221,24 @@ br {
 }
 
 /********************************************************************
-* Additional styles for the record Manager application
+* Additional styles for the product Manager application
 ********************************************************************/
-#add_record_form {
+#add_product_form {
   margin: .5em 0 1em;
 }
 
-#add_record_form label {
-  width: 6em;
+#add_product_form label {
+  width: 15em;
   padding-right: 1em;
   padding-bottom: .5em;
   float: left;
 }
 
-#add_record_form input {
+#add_product_form input {
   float: left;
 }
 
-#add_record_form input[text] {
+#add_product_form input[text] {
   width: 15em;
 }
 /*# sourceMappingURL=main.css.map */

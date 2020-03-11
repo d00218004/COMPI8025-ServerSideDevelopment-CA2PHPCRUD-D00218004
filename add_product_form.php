@@ -22,8 +22,8 @@ $statement->closeCursor();
 
     <main>
         <header><h1>ADD A PRODUCT</h1></header>
-        <form action="add_record.php" method="post" enctype="multipart/form-data"
-              id="add_record_form">
+        <form action="add_product.php" method="post" enctype="multipart/form-data"
+              id="add_product_form">
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
@@ -33,7 +33,6 @@ $statement->closeCursor();
             <?php endforeach; ?>
             </select>
             <br>
-
             <label>Code:</label>
             <input type="input" name="code">
             <br>
@@ -66,8 +65,7 @@ $statement->closeCursor();
             <input type="file" name="image" accept="image/*" />
             <br>
             <label>&nbsp;</label>
-            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Record</button>
-            
+            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Product</button>
             <br>
         </form>
         <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>

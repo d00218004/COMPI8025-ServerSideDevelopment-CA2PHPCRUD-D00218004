@@ -7,7 +7,7 @@ if ($category_id == null || $category_id == false) {
     include('error.php');
 } else {
     require_once('database.php');
-    // Delete the records from the database  
+    // Delete the products from the database  
     $query = 'DELETE FROM categories 
               WHERE categoryID = :category_id';
     $statement = $db->prepare($query);

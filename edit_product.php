@@ -1,6 +1,6 @@
 <?php
 // Get the data
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $code = filter_input(INPUT_POST, 'code');
 $name = filter_input(INPUT_POST, 'name');
@@ -10,7 +10,7 @@ $storage = filter_input(INPUT_POST, 'storage');
 $stockQty = filter_input(INPUT_POST, 'stockQty');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
-if ($record_id == NULL || $record_id == FALSE || $category_id == NULL || $category_id == FALSE || empty($code) || empty($name) || empty($description) || empty($colour) || empty($storage) || $price == NULL || $price == FALSE) {
+if ($product_id == NULL || $product_id == FALSE || $category_id == NULL || $category_id == FALSE || empty($code) || empty($name) || empty($description) || empty($colour) || empty($storage) || $price == NULL || $price == FALSE) {
 $error = "Invalid data. Check all fields and try again.";
 include('error.php');
 } else {
@@ -42,9 +42,9 @@ $image = $original_image; // old image from database
 }
 // End Image upload
 
-// If valid, update the records in the database
+// If valid, update the products in the database
 require_once('database.php');
-$query = 'UPDATE records
+$query = 'UPDATE products
 SET categoryID = :category_id,
 code = :code,
 name = :name,
@@ -54,7 +54,7 @@ storage = :storage,
 stockQty = :stockQty,
 price = :price,
 image = :image
-WHERE recordID = :record_id';
+WHERE productID = :product_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':code', $code);
@@ -65,7 +65,7 @@ $statement->bindValue(':storage', $storage);
 $statement->bindValue(':stockQty', $stockQty);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':image', $image);
-$statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':product_id', $product_id);
 $statement->execute();
 $statement->closeCursor();
 // Display the index page

@@ -1,13 +1,13 @@
 <?php
 require('database.php');
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 $query = 'SELECT *
-          FROM records
-          WHERE recordID = :record_id';
+          FROM products
+          WHERE productID = :product_id';
 $statement = $db->prepare($query);
-$statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':product_id', $product_id);
 $statement->execute();
-$record = $statement->fetch(PDO::FETCH_ASSOC);
+$product = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -23,48 +23,48 @@ $statement->closeCursor();
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
        <header><h1>EDIT A PRODUCT</h1></header>
-        <form action="edit_record.php" method="post" enctype="multipart/form-data"
-              id="add_record_form">
-            <input type="hidden" name="original_image" value="<?php echo $record['image']; ?>" />
-            <input type="hidden" name="record_id"
-                   value="<?php echo $record['recordID']; ?>">
+        <form action="edit_product.php" method="post" enctype="multipart/form-data"
+              id="add_product_form">
+            <input type="hidden" name="original_image" value="<?php echo $product['image']; ?>" />
+            <input type="hidden" name="product_id"
+                   value="<?php echo $product['productID']; ?>">
             <label>Category ID:</label>
             <input type="category_id" name="category_id"
-                   value="<?php echo $record['categoryID']; ?>">
+                   value="<?php echo $product['categoryID']; ?>">
             <br>
             <label>Code:</label>
             <input type="input" name="code"
-                   value="<?php echo $record['code']; ?>">
+                   value="<?php echo $product['code']; ?>">
             <br>
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $record['name']; ?>">
+                   value="<?php echo $product['name']; ?>">
             <br>
             <label>Description:</label>
             <input type="input" name="description"
-                   value="<?php echo $record['description']; ?>">
+                   value="<?php echo $product['description']; ?>">
             <br>
             <label>Colour:</label>
             <input type="input" name="colour"
-                   value="<?php echo $record['colour']; ?>">
+                   value="<?php echo $product['colour']; ?>">
             <br>
             <label>Storage:</label>
             <input type="input" name="storage"
-                   value="<?php echo $record['storage']; ?>">
+                   value="<?php echo $product['storage']; ?>">
               <br>
             <label>Stock Quantity:</label>
             <input type="input" name="stockQty"
-                   value="<?php echo $record['stockQty']; ?>">
+                   value="<?php echo $product['stockQty']; ?>">
             <br>
             <label>Price:</label>
             <input type="input" name="price"
-                   value="<?php echo $record['price']; ?>">
+                   value="<?php echo $product['price']; ?>">
             <br>
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>
-            <?php if ($record['image'] != "") { ?>
-            <p><img src="image_uploads/<?php echo $record['image']; ?>" height="150" /></p>
+            <?php if ($product['image'] != "") { ?>
+            <p><img src="image_uploads/<?php echo $product['image']; ?>" height="150" /></p>
             <?php } ?>
             <label>&nbsp;</label>
             <input type="submit" value="Save Changes">
