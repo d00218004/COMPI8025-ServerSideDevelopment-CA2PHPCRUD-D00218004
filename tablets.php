@@ -54,13 +54,13 @@ $statement3->closeCursor();
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?tabletcategory_id=1">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?tabletcategory_id=1">Phones <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./tablets.php">Features</a>
+        <a class="nav-link" href="./tablets.php">Tablets</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+      <a class="nav-link" href="./wearables.php">Wearables</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

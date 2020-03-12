@@ -112,12 +112,28 @@ table tr th {
 }
 
 #category-table #category-table-description {
-  padding-right: 40em;
+  padding-right: 40em !important;
 }
 
 #category-table td, #category-table th {
+  padding-right: .25em !important;
   border: 1px dashed black;
   padding: .2em .25em .2em .5em;
+  vertical-align: top;
+  text-align: left;
+}
+
+#wearable-category-table #wearable-category-table-name {
+  padding-right: 2.5em !important;
+}
+
+#wearable-category-table #wearable-category-table-description {
+  padding-right: 35em !important;
+}
+
+#wearable-category-table td, #wearable-category-table th {
+  border: 1px dashed black;
+  padding: .2em .25em .2em .5em !important;
   vertical-align: top;
   text-align: left;
 }
