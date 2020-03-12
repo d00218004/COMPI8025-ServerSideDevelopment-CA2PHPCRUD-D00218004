@@ -12,6 +12,22 @@ header
   }
 }
 
+#welcome-header
+{
+  margin: 0;
+  border-bottom: 2px solid black;
+  width: 50%;
+  padding: .5em 0;
+  padding-top: 25px !important;
+  h1
+    {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 700;
+      color: darkgrey;
+      padding-bottom: 10px;
+    }
+}
+
 /**************************************************
 font-family: 'IBM Plex Sans', sans-serif;
 font-family: 'IBM Plex Sans Condensed', sans-serif;

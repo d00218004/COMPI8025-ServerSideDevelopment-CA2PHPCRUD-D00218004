@@ -20,18 +20,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
-<body>
+<body id="body2">
     <div class="welcome-form">
     <div class="page-header">
         <centre>
         <img id="login-logo" src="image-resized/black-samsung-logo.png" />    </centre>
-        <header><h1>STOCK CONTROL SYSTEM</h1></header>
-
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b><br><br><br>WELCOME TO THE SAMSUNG STOCK CONTROL SYSTEM</h1>
+        <center><h1 id="welcome-header">STOCK CONTROL SYSTEM</h1></center><br><br>
+        <h1 id="access-granted">ACCESS GRANTED  </h1>
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
         <br><br><br><br>
     </div>
     <p>
-        <a href="index.php" class="btn btn-warning">Access Samsung Stock Control System</a>
+    <a <button type="button" href="index.php" class="btn btn-success">Access Samsung Stock Control System</button> </a>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </p>
