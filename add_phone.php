@@ -71,5 +71,5 @@ if ($phonecategory_id == null || $phonecategory_id == false || $code == null || 
     $statement->execute();
     $statement->closeCursor();
 // Display the phones List page
-    include('index.php');
+    include('phones.php');
 }

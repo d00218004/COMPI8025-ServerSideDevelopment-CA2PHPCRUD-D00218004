@@ -12,6 +12,6 @@ if ($phone_id != false && $phonecategory_id != false) {
     $statement->execute();
     $statement->closeCursor();
 }
-// display the Homepage
-include('index.php');
+// display the Phones
+include('phones.php');
 ?>

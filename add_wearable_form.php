@@ -72,7 +72,7 @@ $statement->closeCursor();
             <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Wearable</button>
             <br>
         </form>
-        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>
+        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="wearables.php">Return to Wearables</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>

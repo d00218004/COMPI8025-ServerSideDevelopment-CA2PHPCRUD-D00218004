@@ -47,14 +47,14 @@ $statement3->closeCursor();
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/index.php"><img src="image-resized/black-samsung-logo.png" /></a>
+<a class="nav-link" href="./phones.php"><img src="image-resized/black-samsung-logo.png" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?phonecategory_id=1">Phones <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="./phones.php">Phones <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./tablets.php">Tablets</a>

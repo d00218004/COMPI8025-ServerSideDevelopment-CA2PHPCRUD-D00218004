@@ -68,7 +68,7 @@ $statement->bindValue(':image', $image);
 $statement->bindValue(':phone_id', $phone_id);
 $statement->execute();
 $statement->closeCursor();
-// Display the index page
-include('index.php');
+// Display the phones page
+include('phones.php');
 }
 ?>
