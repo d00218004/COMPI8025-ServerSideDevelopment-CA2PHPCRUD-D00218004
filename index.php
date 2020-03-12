@@ -63,7 +63,7 @@ $statement3->closeCursor();
         <a class="nav-link" href="./wearables.php">Wearables</a>
       </li>
       <li class="nav-item dropdown">
-      <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+      <a id="logout-button" href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
       </li>
     </ul>
   </div>

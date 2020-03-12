@@ -7,6 +7,19 @@ body {
   background-color: white;
   border: 1px solid black;
   padding: .5em 2em;
+  margin-top: 50px !important;
+}
+
+#body1 {
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 500px !important;
+  height: 500px;
+  margin: 0 auto !important;
+  background-color: white;
+  border: 1px solid black;
+  padding: .5em 2em;
+  margin-top: 150px !important;
 }
 
 aside, section {
@@ -190,6 +203,26 @@ td, th {
   padding: .2em .5em .2em .5em;
   vertical-align: top;
   text-align: left;
+}
+
+#logout-button {
+  margin-left: 970px !important;
+}
+
+.login-form {
+  margin: auto;
+  width: 50%;
+  width: 300px;
+}
+
+.welcome-form {
+  margin: auto;
+  width: 50%;
+  width: 700px;
+}
+
+#login-logo {
+  margin-top: 10px;
 }
 
 /* the styles for the html elements */

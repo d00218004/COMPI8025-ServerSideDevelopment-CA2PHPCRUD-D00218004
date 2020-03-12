@@ -92,14 +92,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./scss/main.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
-<body>
-    <div class="wrapper">
-        <h2>Login</h2>
+<body id="body1">
+    <div class="login-form">
+        <center>
+    <img id="login-logo" src="image-resized/black-samsung-logo.png" />
+    <header><h1>STOCK CONTROL SYSTEM</h1></header>
+</center><br><br>
+
+        <h2>LOGIN</h2>
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
@@ -117,6 +123,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
-    </div>
+</div>
 </body>
 </html>
