@@ -1,11 +1,11 @@
 <?php
 require('database.php');
 $query = 'SELECT *
-          FROM phonecategories
-          ORDER BY phonecategoryID';
+          FROM tabletcategories
+          ORDER BY tabletcategoryID';
 $statement = $db->prepare($query);
 $statement->execute();
-$phonecategories = $statement->fetchAll();
+$tabletcategories = $statement->fetchAll();
 $statement->closeCursor();
 ?>
 <!DOCTYPE html>
@@ -21,14 +21,14 @@ $statement->closeCursor();
     <header><img src="./image-resized/black-samsung-logo.png" /></header>
 
     <main>
-        <header><h1>ADD A PHONE</h1></header>
-        <form action="add_phone.php" method="post" enctype="multipart/form-data"
+        <header><h1>ADD A TABLET</h1></header>
+        <form action="add_tablet.php" method="post" enctype="multipart/form-data"
               id="add_product_form">
-            <label>Phone Category:</label>
-            <select name="phonecategory_id">
-            <?php foreach ($phonecategories as $phonecategory) : ?>
-                <option value="<?php echo $phonecategory['phonecategoryID']; ?>">
-                    <?php echo $phonecategory['phonecategoryName']; ?>
+            <label>Tablet Category:</label>
+            <select name="tabletcategory_id">
+            <?php foreach ($tabletcategories as $tabletcategory) : ?>
+                <option value="<?php echo $tabletcategory['tabletcategoryID']; ?>">
+                    <?php echo $tabletcategory['tabletcategoryName']; ?>
                 </option>
             <?php endforeach; ?>
             </select>
@@ -65,10 +65,10 @@ $statement->closeCursor();
             <input type="file" name="image" accept="image/*" />
             <br>
             <label>&nbsp;</label>
-            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Phone</button>
+            <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Tablet</button>
             <br>
         </form>
-        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>
+        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="tablets.php">Back to Tablets</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>
