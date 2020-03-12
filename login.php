@@ -98,12 +98,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
+
 <body id="body1">
     <div class="login-form">
         <center>
-    <img id="login-logo" src="image-resized/black-samsung-logo.png" />
-    <header><h1>STOCK CONTROL SYSTEM</h1></header>
-</center><br><br>
+            <img id="login-logo" src="image-resized/black-samsung-logo.png" />
+            <header><h1>STOCK CONTROL SYSTEM</h1></header>
+        </center><br><br>
 
         <h2>LOGIN</h2>
         <p>Please fill in your credentials to login.</p>

@@ -4,11 +4,12 @@ $tabletcategory_id = filter_input(INPUT_POST, 'tabletcategory_id', FILTER_VALIDA
 $code = filter_input(INPUT_POST, 'code');
 $name = filter_input(INPUT_POST, 'name');
 $description = filter_input(INPUT_POST, 'description');
+$stockQty = filter_input(INPUT_POST, 'stockQty');
 $colour = filter_input(INPUT_POST, 'colour');
 $storage = filter_input(INPUT_POST, 'storage');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
-if ($tabletcategory_id == null || $tabletcategory_id == false || $code == null || $name == null || $description == null || $colour == null || $storage == null || $price == null || $price == false) {
+if ($tabletcategory_id == null || $tabletcategory_id == false || $code == null || $name == null || $description == null || $stockQty == null || $colour == null || $storage == null || $price == null || $price == false) {
     $error = "Invalid data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -56,9 +57,9 @@ if ($tabletcategory_id == null || $tabletcategory_id == false || $code == null |
     require_once('database.php');
     // Add the tablets to the database 
     $query = "INSERT INTO tablets
-                 (tabletcategoryID, code, name, description, colour, storage, price, image)
+                 (tabletcategoryID, code, name, description, colour, storage, stockQty, price, image)
               VALUES
-                 (:tabletcategory_id, :code, :name, :description, :colour, :storage, :price, :image)";
+                 (:tabletcategory_id, :code, :name, :description, :colour, :storage, :stockQty, :price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':tabletcategory_id', $tabletcategory_id);
     $statement->bindValue(':code', $code);
@@ -66,6 +67,7 @@ if ($tabletcategory_id == null || $tabletcategory_id == false || $code == null |
     $statement->bindValue(':description', $description);
     $statement->bindValue(':colour', $colour);
     $statement->bindValue(':storage', $storage);
+    $statement->bindValue(':stockQty', $stockQty);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();

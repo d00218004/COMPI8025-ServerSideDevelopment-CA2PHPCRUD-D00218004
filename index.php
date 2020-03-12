@@ -47,7 +47,7 @@ $statement3->closeCursor();
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<img href="../../../" src="image-resized/black-samsung-logo.png" />
+<a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/index.php"><img src="image-resized/black-samsung-logo.png" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -67,7 +67,8 @@ $statement3->closeCursor();
       </li>
     </ul>
   </div>
-</nav></header>
+</nav>
+</header>
 <main>
 <header><h1>STOCK CONTROL SYSTEM</h1></header>
 <aside>

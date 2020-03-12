@@ -7,6 +7,7 @@ $description = filter_input(INPUT_POST, 'description');
 $colour = filter_input(INPUT_POST, 'colour');
 $size = filter_input(INPUT_POST, 'size');
 $bluetooth = filter_input(INPUT_POST, 'bluetooth');
+$stockQty = filter_input(INPUT_POST, 'stockQty');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
 if ($wearablecategory_id == null || $wearablecategory_id == false || $code == null || $name == null || $description == null || $colour == null || $size == null || $bluetooth == null || $price == null || $price == false) {
@@ -57,9 +58,9 @@ if ($wearablecategory_id == null || $wearablecategory_id == false || $code == nu
     require_once('database.php');
     // Add the wearables to the database 
     $query = "INSERT INTO wearables
-                 (wearablecategoryID, code, name, description, colour, size, bluetooth, price, image)
+                 (wearablecategoryID, code, name, description, colour, size, bluetooth, stockQty, price, image)
               VALUES
-                 (:wearablecategory_id, :code, :name, :description, :colour, :size, :bluetooth, :price, :image)";
+                 (:wearablecategory_id, :code, :name, :description, :colour, :size, :bluetooth, :stockQty, :price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':wearablecategory_id', $wearablecategory_id);
     $statement->bindValue(':code', $code);
@@ -68,6 +69,7 @@ if ($wearablecategory_id == null || $wearablecategory_id == false || $code == nu
     $statement->bindValue(':colour', $colour);
     $statement->bindValue(':size', $size);
     $statement->bindValue(':bluetooth', $bluetooth);
+    $statement->bindValue(':stockQty', $stockQty);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();

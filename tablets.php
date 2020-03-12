@@ -47,34 +47,28 @@ $statement3->closeCursor();
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<img href="../../../" src="image-resized/black-samsung-logo.png" />
+<a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/index.php"><img src="image-resized/black-samsung-logo.png" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?tabletcategory_id=1">Phones <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../COMPI8025-ServerSideDevelopment-CA2PHPCRUD-D00218004/?phonecategory_id=1">Phones <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./tablets.php">Tablets</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="./wearables.php">Wearables</a>
+        <a class="nav-link" href="./wearables.php">Wearables</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <a id="logout-button" href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
       </li>
     </ul>
   </div>
-</nav></header>
+</nav>
+</header>
 <main>
 <header><h1>STOCK CONTROL SYSTEM</h1></header>
 <aside>
