@@ -77,7 +77,7 @@ $statement3->closeCursor();
 <nav>
 <ul>
 <?php foreach ($tabletcategories as $tabletcategory) : ?>
-<li id="category-list"><a href="./tablets.php.?tabletcategory_id=<?php echo $tabletcategory['tabletcategoryID']; ?>">
+<li id="category-list"><a href="./tablets.php?tabletcategory_id=<?php echo $tabletcategory['tabletcategoryID']; ?>">
 <?php echo $tabletcategory['tabletcategoryName']; ?>
 </a>
 </li>

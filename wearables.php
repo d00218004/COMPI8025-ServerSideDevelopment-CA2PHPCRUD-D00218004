@@ -77,7 +77,7 @@ $statement3->closeCursor();
 <nav>
 <ul>
 <?php foreach ($wearablecategories as $wearablecategory) : ?>
-<li id="category-list"><a href="./wearables.php.?wearablecategory_id=<?php echo $wearablecategory['wearablecategoryID']; ?>">
+<li id="category-list"><a href="./wearables.php?wearablecategory_id=<?php echo $wearablecategory['wearablecategoryID']; ?>">
 <?php echo $wearablecategory['wearablecategoryName']; ?>
 </a>
 </li>

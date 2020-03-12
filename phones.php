@@ -77,7 +77,7 @@ $statement3->closeCursor();
 <nav>
 <ul>
 <?php foreach ($phonecategories as $phonecategory) : ?>
-<li id="category-list"><a href="./phones.php.?phonecategory_id=<?php echo $phonecategory['phonecategoryID']; ?>">
+<li id="category-list"><a href="./phones.php?phonecategory_id=<?php echo $phonecategory['phonecategoryID']; ?>">
 <?php echo $phonecategory['phonecategoryName']; ?>
 </a>
 </li>
