@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <!-- the body section -->
-<body>
+<body id="body2">
 <header><img src="./image-resized/black-samsung-logo.png" /></header>
     <main>
         <header><h1>PHONE CATEGORIES</h1></header>
@@ -52,7 +52,7 @@
         <input id="add_phone_category_button" type="submit" value="Add">
     </form>
     <br>
-    <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="index.php">Homepage</a></button>
+    <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="./phones.php">Return to Phones</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>

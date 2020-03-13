@@ -91,39 +91,59 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./scss/login.css">
     <link rel="stylesheet" type="text/css" href="./scss/main.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
+
 </head>
 
-<body id="body1">
-    <div class="login-form">
-        <center>
+<body id="1">
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+            <center>
             <img id="login-logo" src="image-resized/black-samsung-logo.png" />
             <header><h1>STOCK CONTROL SYSTEM</h1></header>
         </center><br><br>
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-label-group" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                  <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                  <label for="username">Email address</label>
+                  <span class="help-block"><?php echo $username_err; ?></span>
+                </div>
 
-        <h2>LOGIN</h2>
-        <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
+                <div class="form-label-group" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                  <input type="password" name="password" class="form-control">
+                  <label for="password">Password</label>
+                  <span class="help-block"><?php echo $password_err; ?></span>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+
+
+          
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-        </form>
+
+
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                <div class="text-center">
+                  <a class="small" href="reset-password.php">Forgot password?</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>

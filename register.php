@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
-<body>
+<body id="body2">
     <div class="wrapper">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>

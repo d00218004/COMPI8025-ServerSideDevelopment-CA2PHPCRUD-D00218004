@@ -17,7 +17,7 @@ $statement->closeCursor();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <!-- the body section -->
-<body>
+<body id="body2">
     <header><img src="./image-resized/black-samsung-logo.png" /></header>
 
     <main>
@@ -34,11 +34,11 @@ $statement->closeCursor();
             </select>
             <br>
             <label>Code:</label>
-            <input type="input" name="code" required>
+            <input type="input" name="code" required placeholder="Product must have a Stock Code">
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name" required>
+            <input type="input" name="name" required placeholder="Product must have a Stock Name">
             <br>
 
             <label>Description:</label>
@@ -46,11 +46,11 @@ $statement->closeCursor();
             <br>
 
             <label>Colour:</label>
-            <input type="input" name="colour" required>
+            <input type="input" name="colour" required placeholder="Product must have a Colour">
             <br>
 
             <label>Size:</label required>
-            <input type="input" name="size">
+            <input type="input" name="size" placeholder="Product must have a Size">
             <br>
 
             <label>Bluetooth Supported:</label>
@@ -58,11 +58,11 @@ $statement->closeCursor();
             <br>
 
             <label>Stock Quantity:</label>
-            <input type="input" name="stockQty" required>
+            <input type="input" name="stockQty" required placeholder="Product must have a Quantity">
             <br>
 
             <label>Price:</label>
-            <input type="input" name="price" required>
+            <input type="input" name="price" required placeholder="Product must have a Price">
             <br>
 
             <label>Image:</label>
@@ -72,7 +72,7 @@ $statement->closeCursor();
             <button type="submit" id="button-actions" type="button" class="btn btn-outline-dark">Add Wearable</button>
             <br>
         </form>
-        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="wearables.php">Return to Wearables</a></button>
+        <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="./wearables.php">Return to Wearables</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>
