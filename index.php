@@ -4,8 +4,8 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
-    exit;
+  header("location: welcome.php");
+  exit;
 }
  
 // Include config file
@@ -90,7 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>LOGIN PORTAL</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./scss/login.css">
     <link rel="stylesheet" type="text/css" href="./scss/main.css">
@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body id="1">
 <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <img id="login-image" src="./image-resized/login-image.jpg" />
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
@@ -128,15 +128,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
-
-
-          
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-
-
+                
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
-                <div class="text-center">
-                  <a class="small" href="reset-password.php">Forgot password?</a></div>
+                <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
               </form>
             </div>
           </div>

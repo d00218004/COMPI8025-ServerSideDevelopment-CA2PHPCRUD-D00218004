@@ -7,6 +7,7 @@ $description = filter_input(INPUT_POST, 'description');
 $stockQty = filter_input(INPUT_POST, 'stockQty');
 $colour = filter_input(INPUT_POST, 'colour');
 $storage = filter_input(INPUT_POST, 'storage');
+$stockQty = filter_input(INPUT_POST, 'stockQty');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
 if ($tabletcategory_id == null || $tabletcategory_id == false || $code == null || $name == null || $description == null || $stockQty == null || $colour == null || $storage == null || $price == null || $price == false) {

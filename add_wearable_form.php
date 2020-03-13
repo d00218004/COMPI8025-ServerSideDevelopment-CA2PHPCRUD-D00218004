@@ -25,7 +25,8 @@ $statement->closeCursor();
         <form action="add_wearable.php" method="post" enctype="multipart/form-data"
               id="add_product_form">
             <label>Wearable Category:</label>
-            <select name="wearablecategory_id">
+
+            <select class="form-control" name="wearablecategory_id">
             <?php foreach ($wearablecategories as $wearablecategory) : ?>
                 <option value="<?php echo $wearablecategory['wearablecategoryID']; ?>">
                     <?php echo $wearablecategory['wearablecategoryName']; ?>
@@ -34,35 +35,35 @@ $statement->closeCursor();
             </select>
             <br>
             <label>Code:</label>
-            <input type="input" name="code" required placeholder="Product must have a Stock Code">
+            <input class="form-control" type="input" name="code" required placeholder="Product must have a Stock Code">
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name" required placeholder="Product must have a Stock Name">
+            <input class="form-control" type="input" name="name" required placeholder="Product must have a Stock Name">
             <br>
 
             <label>Description:</label>
-            <input type="input" name="description">
+            <input class="form-control" type="input" name="description">
             <br>
 
             <label>Colour:</label>
-            <input type="input" name="colour" required placeholder="Product must have a Colour">
+            <input class="form-control" type="input" name="colour" required placeholder="Product must have a Colour">
             <br>
 
             <label>Size:</label required>
-            <input type="input" name="size" placeholder="Product must have a Size">
+            <input class="form-control" type="input" name="size" placeholder="Product must have a Size">
             <br>
 
             <label>Bluetooth Supported:</label>
-            <input type="input" name="bluetooth">
+            <input class="form-control" type="input" name="bluetooth">
             <br>
 
             <label>Stock Quantity:</label>
-            <input type="input" name="stockQty" required placeholder="Product must have a Quantity">
+            <input class="form-control" type="input" name="stockQty" required placeholder="Product must have a Quantity">
             <br>
 
             <label>Price:</label>
-            <input type="input" name="price" required placeholder="Product must have a Price">
+            <input class="form-control" type="input" name="price" required placeholder="Product must have a Price">
             <br>
 
             <label>Image:</label>

@@ -18,14 +18,17 @@ $statement->closeCursor();
 </head>
 <!-- the body section -->
 <body id="body2">
+<div class="container-fluid">
     <header><img src="./image-resized/black-samsung-logo.png" /></header>
 
     <main>
         <header><h1>ADD A PHONE</h1></header>
-        <form action="add_phone.php" method="post" enctype="multipart/form-data"
-              id="add_product_form">
+
+
+        <form action="add_phone.php" method="post" enctype="multipart/form-data" id="add_product_form">
+            
             <label>Phone Category:</label>
-            <select name="phonecategory_id">
+            <select  class="form-control" name="phonecategory_id">
             <?php foreach ($phonecategories as $phonecategory) : ?>
                 <option value="<?php echo $phonecategory['phonecategoryID']; ?>">
                     <?php echo $phonecategory['phonecategoryName']; ?>
@@ -34,31 +37,31 @@ $statement->closeCursor();
             </select>
             <br>
             <label>Code:</label>
-            <input type="input" name="code" required placeholder="Product must have a Stock Code">
+            <input class="form-control" type="input" name="code" required placeholder="Product must have a Stock Code">
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name" required placeholder="Product must have a Name">
+            <input class="form-control"  type="input" name="name" required placeholder="Product must have a Name">
             <br>
 
             <label>Description:</label>
-            <input type="input" name="description">
+            <input class="form-control"  type="input" name="description">
             <br>
 
             <label>Colour:</label>
-            <input type="input" name="colour" required placeholder="Product must have a Colour">
+            <input class="form-control"  type="input" name="colour" required placeholder="Product must have a Colour">
             <br>
 
             <label>Storage:</label required>
-            <input type="input" name="storage" pattern="[0-9]+[A-Z].{1,}" title="Must contan at least one number followed by two letters (such as 128GB or 1TB)">
+            <input class="form-control"  type="input" name="storage" pattern="[0-9]+[A-Z].{1,}" title="Must contan at least one number followed by two letters (such as 128GB or 1TB)">
             <br>
 
             <label>Stock Quantity:</label>
-            <input type="input" name="stockQty" required placeholder="Product must have a Quantiry">
+            <input class="form-control"  type="input" name="stockQty" required placeholder="Product must have a Quantiry">
             <br>
 
             <label>Price:</label>
-            <input type="input" name="price" required placeholder="Product must have a Price">
+            <input class="form-control"  type="input" name="price" required placeholder="Product must have a Price">
             <br>
 
             <label>Image:</label>

@@ -6,6 +6,7 @@ $name = filter_input(INPUT_POST, 'name');
 $description = filter_input(INPUT_POST, 'description');
 $colour = filter_input(INPUT_POST, 'colour');
 $storage = filter_input(INPUT_POST, 'storage');
+$stockQty = filter_input(INPUT_POST, 'stockQty');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 // Validate inputs
 if ($phonecategory_id == null || $phonecategory_id == false || $code == null || $name == null || $description == null || $colour == null || $storage == null || $price == null || $price == false) {
@@ -56,9 +57,9 @@ if ($phonecategory_id == null || $phonecategory_id == false || $code == null || 
     require_once('database.php');
     // Add the phones to the database 
     $query = "INSERT INTO phones
-                 (phonecategoryID, code, name, description, colour, storage, price, image)
+                 (phonecategoryID, code, name, description, colour, storage, stockQty, price, image)
               VALUES
-                 (:phonecategory_id, :code, :name, :description, :colour, :storage, :price, :image)";
+                 (:phonecategory_id, :code, :name, :description, :colour, :storage, :stockQty, :price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':phonecategory_id', $phonecategory_id);
     $statement->bindValue(':code', $code);
@@ -66,6 +67,7 @@ if ($phonecategory_id == null || $phonecategory_id == false || $code == null || 
     $statement->bindValue(':description', $description);
     $statement->bindValue(':colour', $colour);
     $statement->bindValue(':storage', $storage);
+    $statement->bindValue(':stockQty', $stockQty);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();

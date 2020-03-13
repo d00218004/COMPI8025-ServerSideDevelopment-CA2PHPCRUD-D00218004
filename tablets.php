@@ -1,4 +1,14 @@
 <?php
+
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect them to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+
 // Connect to the database
 require_once('database.php');
 // Set the default category to the ID of 1

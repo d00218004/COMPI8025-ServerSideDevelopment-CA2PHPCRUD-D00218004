@@ -22,10 +22,12 @@ $statement->closeCursor();
 
     <main>
         <header><h1>ADD A TABLET</h1></header>
+
         <form action="add_tablet.php" method="post" enctype="multipart/form-data"
               id="add_product_form">
+
             <label>Tablet Category:</label>
-            <select name="tabletcategory_id">
+            <select class="form-control" name="tabletcategory_id">
             <?php foreach ($tabletcategories as $tabletcategory) : ?>
                 <option value="<?php echo $tabletcategory['tabletcategoryID']; ?>">
                     <?php echo $tabletcategory['tabletcategoryName']; ?>
@@ -34,31 +36,31 @@ $statement->closeCursor();
             </select>
             <br>
             <label>Code:</label>
-            <input type="input" name="code" required placeholder="Product must have a Stock Code">
+            <input class="form-control" type="input" name="code" required placeholder="Product must have a Stock Code">
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name" required placeholder="Product must have a Name">
+            <input class="form-control" type="input" name="name" required placeholder="Product must have a Name">
             <br>
 
             <label>Description:</label>
-            <input type="input" name="description">
+            <input class="form-control" type="input" name="description">
             <br>
 
             <label>Colour:</label>
-            <input type="input" name="colour" required placeholder="Product must have a Colour">
+            <input class="form-control" type="input" name="colour" required placeholder="Product must have a Colour">
             <br>
 
             <label>Storage:</label required>
-            <input type="input" name="storage" pattern="[0-9]+[A-Z].{1,}" title="Must contan at least one number followed by two letters (such as 128GB or 1TB)">
+            <input class="form-control" type="input" name="storage" pattern="[0-9]+[A-Z].{1,}" title="Must contan at least one number followed by two letters (such as 128GB or 1TB)">
             <br>
 
             <label>Stock Quantity:</label>
-            <input type="input" name="stockQty" required placeholder="Product must have a Quantity">
+            <input class="form-control" type="input" name="stockQty" required placeholder="Product must have a Quantity">
             <br>
 
             <label>Price:</label>
-            <input type="input" name="price" required placeholder="Product must have a Price">
+            <input class="form-control" type="input" name="price" required placeholder="Product must have a Price">
             <br>
 
             <label>Image:</label>

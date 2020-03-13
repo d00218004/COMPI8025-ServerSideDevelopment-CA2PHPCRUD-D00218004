@@ -7,6 +7,7 @@
 @import 'partials/_navbar.scss';
 @import 'partials/_product-table.scss';
 @import 'partials/_login.scss';
+@import 'partials/_login-form.scss';
 @import 'variables/_font-colour';
 
 /* the styles for the html elements */
@@ -42,24 +43,4 @@ br {
 }
 .margin_top_increase {
 	margin-top: 1em;	
-}
-
-/********************************************************************
-* Additional styles for the product Manager application
-********************************************************************/
-#add_product_form {
-    margin: .5em 0 1em;
-}
-#add_product_form label {
-    width: 15em;
-    padding-right: 1em;
-    padding-bottom: .5em;
-    float: left;
-}
-#add_product_form input {
-    float: left;
-    width: 500px !important;
-}
-#add_product_form input[text] {
-    width: 500px !important;
 }
