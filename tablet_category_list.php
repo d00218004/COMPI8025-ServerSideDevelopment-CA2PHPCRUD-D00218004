@@ -52,7 +52,7 @@
         <input id="add_tablet_category_button" type="submit" value="Add">
     </form>
     <br>
-    <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="./tablets.php">Rturn to Tablets</a></button>
+    <button id="button-actions" type="button" class="btn btn-outline-dark"><a href="./tablets.php">Return to Tablets</a></button>
     </main>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> SAMSUNG ELECTRONICS & CO, Ltd.</p>
